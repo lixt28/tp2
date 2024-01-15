@@ -1,3 +1,6 @@
+#ifndef CHAMBRE_H
+#define CHAMBRE_H
+
 #include <string>
 
 class Chambre {
@@ -7,6 +10,7 @@ class Chambre {
     std::string getType() const;
     int getPrix() const;
     void changerPrix(Chambre chambre, int montant);
+    friend std::ostream& operator << (std::ostream& osChambre, Chambre& chambre);
 
     private:
     std::string _numero;
@@ -15,3 +19,5 @@ class Chambre {
     int _prix;
     int _montant;
 };
+
+#endif

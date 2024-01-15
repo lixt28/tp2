@@ -1,6 +1,10 @@
+#ifndef HOTEL_H
+#define HOTEL_H 
+
 #include "chambre.h"
 #include <string>
 #include <vector>
+
 
 class Hotel {
     public:
@@ -8,8 +12,9 @@ class Hotel {
     std::string getidHotel() const;
     std::string getnomHotel() const;
     std::string getVille() const;
-    void getchambresHotel() const;
+    void getchambresHotel();
     void ajouterChambre(Chambre chambre);
+    friend std::ostream& operator << (std::ostream& osHotel, Hotel& hotel);
 
     private:
     std::string _idHotel;
@@ -17,3 +22,5 @@ class Hotel {
     std::string _ville;
     std::vector <Chambre> _chambresHotel;
 };
+
+#endif
